@@ -1,0 +1,29 @@
+#include<iostream>
+#include<cstdlib> // for rand() 
+#include<ctime>  // for time()
+
+using namespace std;
+
+int main() {
+    // for getting random seed
+    srand(time(0));
+     int numbertoguess = rand() % 100 + 1;
+     int userguess;
+
+     cout<<"Welcome to the number guessing game!"<<endl;
+
+     while(true) {
+        cout<<"Guess a number between 1 to 100"<<endl;
+        cin>>userguess;
+
+        if (userguess > numbertoguess){
+            cout<< "Very high! Try again"<<endl;
+        }   else if(userguess < numbertoguess) {
+            cout<< "Very low! Try again"<<endl;
+        }  else {
+            cout<<"Congratulations! You have guessed the correct number!"<<endl;
+            break; // Exit the loop when correct no is guessed
+        }
+     }
+     return 0;
+}
